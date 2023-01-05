@@ -18,6 +18,12 @@ export default async function main(client, secret, pushRequest) {
           `User responded with "${pushStatus.firstValidResponse.actionIdentifier}"`
         );
       }
+
+      if (pushStatus.firstValidResponse.responseText) {
+        console.log(
+          `User entered "${pushStatus.firstValidResponse.responseText}"`
+        );
+      }
     } else {
       console.log("something else?", pushStatus);
     }

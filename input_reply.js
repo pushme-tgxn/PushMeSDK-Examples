@@ -19,7 +19,7 @@ const pushmeClient = new PushMeSDK({
 import main from "./main.js";
 
 main(pushmeClient, TOPIC_SECRET, {
+  categoryId: "input.reply",
   title: "Friend sent you a message!",
   body: "Hey, what's going on?!",
-  categoryId: "input.reply",
 });
