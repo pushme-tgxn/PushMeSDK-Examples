@@ -19,8 +19,10 @@ const pushmeClient = new PushMeSDK({
 import main from "./main.js";
 
 main(pushmeClient, TOPIC_SECRET, {
+  categoryId: "button.open_link",
   title: "you ned to do this thing",
   body: "go to this page",
-  categoryId: "button.open_link",
-  linkUrl: "https://www.google.com",
+  data: {
+    linkUrl: "https://www.google.com",
+  },
 });
