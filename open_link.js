@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import PushMeSDK from "@pushme-tgxn/pushmesdk";
 
-dotenv.config({ path: `../.env` });
+dotenv.config({ path: `./.env` });
 let { TOPIC_SECRET, BACKEND_URL } = process.env;
 
 if (!TOPIC_SECRET || TOPIC_SECRET == "") {
@@ -19,7 +19,8 @@ const pushmeClient = new PushMeSDK({
 import main from "./main.js";
 
 main(pushmeClient, TOPIC_SECRET, {
-  title: "Friend sent you a message!",
-  body: "Hey, what's going on?!",
-  categoryId: "input.reply",
+  title: "you ned to do this thing",
+  body: "go to this page",
+  categoryId: "button.open_link",
+  linkUrl: "https://www.google.com",
 });
