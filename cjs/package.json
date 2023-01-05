@@ -5,7 +5,7 @@
   "repository": "https://github.com/pushme-tgxn/PushMeExamples",
   "license": "MIT",
   "dependencies": {
-    "@pushme-tgxn/pushmesdk": "^1.7.0",
+    "@pushme-tgxn/pushmesdk": "^1.7.2",
     "dotenv": "^16.0.3"
   }
 }

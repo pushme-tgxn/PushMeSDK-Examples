@@ -8,10 +8,7 @@ if (!BACKEND_URL || BACKEND_URL == "") {
   BACKEND_URL = null;
 }
 
-const {
-  default: PushMeSDK,
-  NotificationDefinitions,
-} = require("@pushme-tgxn/pushmesdk");
+const PushMeSDK = require("@pushme-tgxn/pushmesdk");
 
 const main = require("./main");
 
