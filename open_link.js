@@ -20,8 +20,8 @@ import main from "./main.js";
 
 main(pushmeClient, TOPIC_SECRET, {
   categoryId: "button.open_link",
-  title: "you ned to do this thing",
-  body: "go to this page",
+  title: "Please open this link to view your latest invoice",
+  body: "",
   data: {
     linkUrl: "https://www.google.com",
   },
