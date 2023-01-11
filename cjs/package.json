@@ -1,0 +1,12 @@
+{
+  "name": "@pushme-tgxn/pushmesdk-example-esm",
+  "author": "tgxn <pushme@tgxn.net>",
+  "version": "0.0.0",
+  "repository": "https://github.com/pushme-tgxn/PushMeExamples",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@pushme-tgxn/pushmesdk": "^1.10.0",
+    "dotenv": "^16.0.3"
+  }
+}

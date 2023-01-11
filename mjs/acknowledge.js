@@ -1,7 +1,10 @@
 import * as dotenv from "dotenv";
-import PushMeSDK from "@pushme-tgxn/pushmesdk";
 
-dotenv.config({ path: `./.env` });
+import PushMeSDK, { Consts } from "@pushme-tgxn/pushmesdk";
+
+import main from "./main.js";
+
+dotenv.config({ path: `../.env` });
 let { TOPIC_SECRET, BACKEND_URL } = process.env;
 
 if (!TOPIC_SECRET || TOPIC_SECRET == "") {
@@ -16,10 +19,8 @@ const pushmeClient = new PushMeSDK({
   backendUrl: BACKEND_URL,
 });
 
-import main from "./main.js";
-
 main(pushmeClient, TOPIC_SECRET, {
-  title: "Would you like approve this request?",
-  body: "Login to xyz.com / Approve Requests etc",
-  categoryId: "button.approve_deny",
+  categoryId: Consts.PushCategory.BUTTON_ACKNOWLEDGE,
+  title: "You have not paid your water bill!",
+  body: "Please check your latest invoice to ensure you don't get cancelled!",
 });

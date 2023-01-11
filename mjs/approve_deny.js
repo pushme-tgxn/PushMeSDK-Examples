@@ -1,7 +1,10 @@
 import * as dotenv from "dotenv";
-import PushMeSDK from "@pushme-tgxn/pushmesdk";
 
-dotenv.config({ path: `./.env` });
+import PushMeSDK, { Consts } from "@pushme-tgxn/pushmesdk";
+
+import main from "./main.js";
+
+dotenv.config({ path: `../.env` });
 let { TOPIC_SECRET, BACKEND_URL } = process.env;
 
 if (!TOPIC_SECRET || TOPIC_SECRET == "") {
@@ -16,13 +19,8 @@ const pushmeClient = new PushMeSDK({
   backendUrl: BACKEND_URL,
 });
 
-import main from "./main.js";
-
 main(pushmeClient, TOPIC_SECRET, {
-  categoryId: "button.open_link",
-  title: "Please open this link to view your latest invoice",
-  body: "",
-  data: {
-    linkUrl: "https://www.google.com",
-  },
+  categoryId: Consts.PushCategory.BUTTON_APPROVE_DENY,
+  title: "Would you like approve this request?",
+  body: "Login to xyz.com / Approve Requests etc",
 });
