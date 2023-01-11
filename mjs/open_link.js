@@ -1,5 +1,8 @@
 import * as dotenv from "dotenv";
-import PushMeSDK from "@pushme-tgxn/pushmesdk";
+
+import PushMeSDK, { Consts } from "@pushme-tgxn/pushmesdk";
+
+import main from "./main.js";
 
 dotenv.config({ path: `../.env` });
 let { TOPIC_SECRET, BACKEND_URL } = process.env;
@@ -16,10 +19,10 @@ const pushmeClient = new PushMeSDK({
   backendUrl: BACKEND_URL,
 });
 
-import main from "./main.js";
-
 main(pushmeClient, TOPIC_SECRET, {
-  title: "Would you like approve this request?",
-  body: "Login to xyz.com / Approve Requests etc",
-  categoryId: "button.approve_deny",
+  categoryId: Consts.PushCategory.BUTTON_OPEN_LINK,
+  title: "Please open this link to view your latest invoice",
+  data: {
+    linkUrl: "https://www.google.com",
+  },
 });

@@ -1,5 +1,8 @@
 import * as dotenv from "dotenv";
-import PushMeSDK from "@pushme-tgxn/pushmesdk";
+
+import PushMeSDK, { Consts } from "@pushme-tgxn/pushmesdk";
+
+import main from "./main.js";
 
 dotenv.config({ path: `../.env` });
 let { TOPIC_SECRET, BACKEND_URL } = process.env;
@@ -16,10 +19,8 @@ const pushmeClient = new PushMeSDK({
   backendUrl: BACKEND_URL,
 });
 
-import main from "./main.js";
-
 main(pushmeClient, TOPIC_SECRET, {
-  title: "Friend sent you a message!",
-  body: "Hey, what's going on?!",
-  categoryId: "input.reply",
+  categoryId: Consts.PushCategory.BUTTON_ACKNOWLEDGE,
+  title: "You have not paid your water bill!",
+  body: "Please check your latest invoice to ensure you don't get cancelled!",
 });

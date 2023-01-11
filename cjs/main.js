@@ -13,35 +13,20 @@ async function main(client, secret, pushRequest) {
 
       if (foundAction) {
         console.log("User responded with valid action ", foundAction);
-
-        if (foundAction.hasOwnProperty("textInput")) {
-          console.log(
-            "responseText:",
-            pushStatus.firstValidResponse.responseText
-          );
-        }
       } else {
         console.log(
           `User responded with "${pushStatus.firstValidResponse.actionIdentifier}"`
         );
       }
 
-      return {
-        pushIdent,
-        pushStatus,
-        foundAction,
-        firstValidResponse: pushStatus.firstValidResponse,
-      };
+      if (pushStatus.firstValidResponse.responseText) {
+        console.log(
+          `User entered "${pushStatus.firstValidResponse.responseText}"`
+        );
+      }
     } else {
       console.log("something else?", pushStatus);
     }
-
-    return {
-      pushIdent,
-      pushStatus,
-      foundAction: false,
-      firstValidResponse: pushStatus.firstValidResponse,
-    };
   } catch (error) {
     console.error(error.toString());
   }
