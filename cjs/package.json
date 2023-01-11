@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
-    "@pushme-tgxn/pushmesdk": "^1.9.13",
+    "@pushme-tgxn/pushmesdk": "^1.10.0",
     "dotenv": "^16.0.3"
   }
 }
