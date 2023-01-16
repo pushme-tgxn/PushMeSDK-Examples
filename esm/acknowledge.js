@@ -23,4 +23,7 @@ main(pushmeClient, TOPIC_SECRET, {
   categoryId: Consts.PushCategory.BUTTON_ACKNOWLEDGE,
   title: "You have not paid your water bill!",
   body: "Please check your latest invoice to ensure you don't get cancelled!",
+  data: {
+    sendReceipt: true,
+  },
 });
