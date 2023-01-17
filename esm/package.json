@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@pushme-tgxn/pushmesdk": "^1.10.0",
+    "@pushme-tgxn/pushmesdk": "^1.10.6",
     "dotenv": "^16.0.3"
   }
 }
